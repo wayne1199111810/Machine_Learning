@@ -12,7 +12,7 @@ class LinearRegression:
     def __init__(self, X, y):
         self.X = X
         self.y = y
-        nIters = 10000
+        nIters = 1000
         m, n = X.shape
         A = np.concatenate([np.ones((m, 1)), self.X], axis = 1)
         self.para = self.ogd(A, self.y, nIters)
