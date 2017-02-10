@@ -31,7 +31,6 @@ for i in range (0,lambda_len+1):
         x = np.concatenate([x, np.power(xTrain, j)], axis = 0)
         xx = np.concatenate([xx, np.power(xTest, j)], axis = 0)
     w = np.dot(x,x.T) + lam[i]*np.eye(row)
-    
     w = np.dot(np.dot(yTrain,x.T), np.linalg.inv(w))
     predictTrain = np.dot(w, x)
     tmp = yTrain-predictTrain
