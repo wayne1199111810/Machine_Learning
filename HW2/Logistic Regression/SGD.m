@@ -6,12 +6,14 @@ function [w, steps] = SGD( x, y, r0,  nIters, epsilon)
     pre_loss = 0;
     steps=0;
     while  abs(loss - pre_loss) > epsilon && steps < nIters
-        i = ceil(99 * rand(1));
-        learning_rate = r0 / ((1+r0 * steps )^0.75);
-        xi = x(i,:);
-        h = logistic(xi, w, 1);
-        w = w - learning_rate * xi' * (h - y(i));
         pre_loss = loss;
+        for j =1:m
+            i = ceil(99 * rand(1));
+            learning_rate = r0 / ((1+r0 * (steps*m+j) )^0.75);
+            xi = x(i,:);
+            h = logistic(xi, w, 1);
+            w = w - learning_rate * xi' * (h - y(i));
+        end
         loss = sum(y-logistic(x, w, m));
         steps = steps + 1;
     end

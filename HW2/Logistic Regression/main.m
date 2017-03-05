@@ -1,7 +1,7 @@
 clear, clc;
 load q1x.dat;
 load q1y.dat;
-nIters = 200000;
+nIters = 20000;
 epsilon = 1e-8;
 learning_rate = 0.001;
 x = [ones(size(q1x,1), 1), q1x];
