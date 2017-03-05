@@ -1,7 +1,7 @@
 clear, clc;
 file = {'50', '100', '200', '400', '800', '1400'};
 %% read data from file and save in mat
-%{
+
 readWord('SPARSE.TRAIN', 'train');
 for i = 1: length(file)
     fileName = ['SPARSE.TRAIN.', file{i}];
@@ -9,7 +9,7 @@ for i = 1: length(file)
     readWord(fileName, saveName);
 end
 readWord('SPARSE.TEST', 'test');
-%}
+
 %% Naive Bayesian
 load('data\train.mat');
 xtrain = x;

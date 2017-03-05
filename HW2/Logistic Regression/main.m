@@ -1,4 +1,4 @@
-clear, clc;
+clear, clc, close all;
 load q1x.dat;
 load q1y.dat;
 nIters = 20000;
@@ -10,11 +10,13 @@ y = q1y;
 [w, steps] = GD( x, y, learning_rate,  nIters ,epsilon);
 drawResult( x, y, w, 'Gradient Descent');
 display(['GD steps:', num2str(steps)]);
+
 %% Stochastic Gradient Descent
 learning_rate = 1;
 [w, steps] = SGD( x, y, learning_rate,  nIters ,epsilon);
 drawResult( x, y, w, 'Stochastic Gradient Descent');
 display(['SGD steps:', num2str(steps)]);
+
 %% Newton's Method
 [w, steps] = Newton( x, y, nIters ,epsilon);
 drawResult( x, y, w, 'Newton Method');
