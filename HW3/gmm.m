@@ -24,7 +24,6 @@ function [m, sigma, prior] = gmm( filename, k, nIters )
         if m == prevM
             break
         end
-        
     end
 end
 

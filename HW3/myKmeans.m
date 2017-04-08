@@ -1,6 +1,5 @@
 function [ m, kgroup] = myKmeans(filename, k, nIters)
-%MYKMEANS Summary of this function goes here
-%   Detailed explanation goes here
+    %%
     color_scale = 256;
     im = double(imread(filename));
     [rows, cols, dim] = size(im);

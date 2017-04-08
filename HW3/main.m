@@ -1,5 +1,4 @@
 clear, close all;
-k = 16; nIters = 15;
 large = 'mandrill-large.tiff';
 small = 'mandrill-small.tiff';
 %% (1)
@@ -7,6 +6,7 @@ filename = large;
 A = double(imread(filename));
 imwrite(uint8(round(A)), 'p4_1.tiff');
 %% (2)
+k = 16; nIters = 40;
 filename = small;
 [m, kgroup] = myKmeans(filename, k, nIters);
 %% (3)
@@ -19,10 +19,10 @@ imshow(uint8(A));
 title('original image');
 subplot(1,2,2),
 imshow(image);
-title('compress image');
+title('k means compressed image');
 
 %% (5)
-k = 16;
+k = 5;
 nIters = 100;
 filename = small;
 [m, sigma, prior] = gmm( filename, k, nIters);
@@ -47,4 +47,4 @@ imshow(uint8(A));
 title('original image');
 subplot(1,2,2),
 imshow(image);
-title('compress image');
+title('GMM compressed image');
